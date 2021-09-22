@@ -6,11 +6,13 @@ import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MainContainer>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </MainContainer>
+    <>
+      <MainContainer>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </MainContainer>
+    </>
   );
 }
 export default MyApp;
