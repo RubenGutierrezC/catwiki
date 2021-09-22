@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <title>Cat Wiki</title>
-          <meta name="descripcion" content="Cat wiki for devChallenges" />
+          <meta name="description" content="Cat wiki for devChallenges" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
