@@ -22,8 +22,13 @@ module.exports = {
         "breed-md": "220px",
         33: "9.375rem",
       },
+      maxWidth: {
+        havingTitle: "455px",
+        havingDescription: "394px",
+      },
       textColor: {
         customBrown: "#291507",
+        linkBrown: "rgba(41, 21, 7, 0.6)",
       },
       backgroundColor: {
         heroDown: "#E3E1DC",

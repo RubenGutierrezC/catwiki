@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const mockCats = [
   {
@@ -52,12 +53,30 @@ const Hero = () => {
             href="#"
             className="ml-auto self-end font-mont text-lg hidden sm:block"
           >
-            SEE MORE
+            SEE MORE &#8594;
           </a>
         </div>
         <div className="flex justify-between flex-wrap pb-9 md:pb-24">
           {mockCats.map((cat, index) => (
-            <div key={index} className="mb-4 mr-1">
+            <motion.div
+              key={index}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 0.8,
+                  opacity: 0,
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.4,
+                  },
+                },
+              }}
+              className="mb-4 mr-1"
+            >
               <div className="relative w-breed md:w-breed-md h-breed md:h-breed-md rounded-xl overflow-hidden mb-3 md:mb-5">
                 <Image
                   src={cat.img}
@@ -69,7 +88,7 @@ const Hero = () => {
               <p className="font-mont text-customBrown text-xs md:text-lg font-semibold">
                 {cat.name}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
