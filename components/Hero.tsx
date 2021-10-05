@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FunctionComponent } from "react";
+import { FetchTopData } from "../types/interfaces";
 
 const mockCats = [
   {
@@ -20,19 +22,19 @@ const mockCats = [
   },
 ];
 
-const Hero = () => {
+const Hero: FunctionComponent<FetchTopData> = ({ data = [] }) => {
   return (
     <section className="relative rounded-t-42 overflow-hidden">
-      <div className="relative h-36 sm:h-96">
+      <div className="relative h-36 sm:h-96 bg-black">
         <Image
-          className="-z-1"
+          className="z-0"
           src="/assets/HeroImagelg.png"
           layout="fill"
           objectFit="cover"
           alt="catwiki hero"
           quality={90}
         />
-        <div className="text-white ml-7 md:ml-24 pt-5 sm:pt-28">
+        <div className="text-white ml-7 md:ml-24 pt-5 sm:pt-28 relative z-10">
           <h1 className="font-mistery font-normal text-sm sm:text-4xl md:text-6xl mb-2 md:mb-3 ">
             catwiki
           </h1>
@@ -57,7 +59,7 @@ const Hero = () => {
           </a>
         </div>
         <div className="flex justify-between flex-wrap pb-9 md:pb-24">
-          {mockCats.map((cat, index) => (
+          {data.map((cat, index) => (
             <motion.div
               key={index}
               initial="hidden"
@@ -79,7 +81,7 @@ const Hero = () => {
             >
               <div className="relative w-breed md:w-breed-md h-breed md:h-breed-md rounded-xl overflow-hidden mb-3 md:mb-5">
                 <Image
-                  src={cat.img}
+                  src={cat.image.url}
                   layout="fill"
                   objectFit="cover"
                   alt="cats breeds"

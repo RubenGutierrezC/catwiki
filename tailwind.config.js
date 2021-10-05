@@ -24,7 +24,7 @@ module.exports = {
       },
       maxWidth: {
         havingTitle: "455px",
-        havingDescription: "394px",
+        havingDescription: "450px",
       },
       textColor: {
         customBrown: "#291507",

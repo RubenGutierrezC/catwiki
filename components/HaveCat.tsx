@@ -6,8 +6,8 @@ const description =
 
 const HaveCat = () => {
   return (
-    <section className="flex flex-wrap mb-6 md:mb-24 justify-center lg:justify-between">
-      <div className="mb-16">
+    <section className="flex flex-wrap mb-6 md:mb-24 justify-center lg:justify-between xl:px-28">
+      <div className="mb-16 md:mt-20">
         <h3 className="font-mont font-bold text-customBrown text-4xl md:text-5xl why-have-cat mb-10 max-w-havingTitle">
           {title}
         </h3>
@@ -23,7 +23,7 @@ const HaveCat = () => {
       </div>
       <div className="flex">
         <div className="flex flex-col mr-4">
-          <div className="relative w-44 md:w-56 lg:w-64 h-24 md:h-36 lg:h-40 mb-4">
+          <div className="relative w-44 md:w-56 lg:w-72 h-24 md:h-36 lg:h-40 mb-4">
             <Image src="/assets/image2.png" alt="cat1" layout="fill" />
           </div>
           <div className="relative w-32 md:w-40 lg:w-48 h-32 md:h-40 lg:h-72 self-end">
