@@ -2,25 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FunctionComponent } from "react";
 import { FetchTopData } from "../types/interfaces";
-
-const mockCats = [
-  {
-    img: "/assets/image2.png",
-    name: "Bengal",
-  },
-  {
-    img: "/assets/image2.png",
-    name: "Savannah",
-  },
-  {
-    img: "/assets/image2.png",
-    name: "Norwegian Forest Cat",
-  },
-  {
-    img: "/assets/image2.png",
-    name: "Selkirk Rex",
-  },
-];
+import Link from "next/link";
 
 const Hero: FunctionComponent<FetchTopData> = ({ data = [] }) => {
   return (
@@ -51,12 +33,11 @@ const Hero: FunctionComponent<FetchTopData> = ({ data = [] }) => {
           <p className="font-mont whitespace-pre text-customBrown text-lg md:text-5xl font-bold">
             66+ Brereds For you {"\n"}to discover
           </p>
-          <a
-            href="#"
-            className="ml-auto self-end font-mont text-lg hidden sm:block"
-          >
-            SEE MORE &#8594;
-          </a>
+          <Link href="/top">
+            <a className="ml-auto self-end font-mont text-lg hidden sm:block">
+              SEE MORE &#8594;
+            </a>
+          </Link>
         </div>
         <div className="flex justify-between flex-wrap pb-9 md:pb-24">
           {data.map((cat, index) => (
