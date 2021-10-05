@@ -26,7 +26,7 @@ const Hero: FunctionComponent<FetchTopData> = ({ data = [] }) => {
         </div>
       </div>
       <div className="px-7 md:px-24 pt-3 bg-heroDown mb-16 rounded-b-42">
-        <p className="font-mont text-xs md:text-lg text-customBrown most-searched mb-4">
+        <p className="font-mont text-xs md:text-lg text-customBrown most-searched mb-4 md:mt-10">
           Most Searched Breeds
         </p>
         <div className="flex mb-6 md:mb-11">
@@ -60,14 +60,17 @@ const Hero: FunctionComponent<FetchTopData> = ({ data = [] }) => {
               }}
               className="mb-4 mr-1"
             >
-              <div className="relative w-breed md:w-breed-md h-breed md:h-breed-md rounded-xl overflow-hidden mb-3 md:mb-5">
-                <Image
-                  src={cat.image.url}
-                  layout="fill"
-                  objectFit="cover"
-                  alt="cats breeds"
-                />
-              </div>
+              <Link href={`/breeds/${cat.name}`} passHref>
+                <div className="relative w-breed md:w-breed-md h-breed md:h-breed-md rounded-xl overflow-hidden mb-3 md:mb-5 cursor-pointer">
+                  <Image
+                    src={cat.image.url}
+                    layout="fill"
+                    objectFit="cover"
+                    alt="cats breeds"
+                  />
+                </div>
+              </Link>
+
               <p className="font-mont text-customBrown text-xs md:text-lg font-semibold">
                 {cat.name}
               </p>
